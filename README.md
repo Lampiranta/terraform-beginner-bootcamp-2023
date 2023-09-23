@@ -171,3 +171,59 @@ If it is succesful, you should see a json payload return that looks like this:
 ```
 
 We'll need to generate AWS CLI credits from IAM User in order to the use AWS CLI.
+
+
+## Terraform Basics
+
+### Terraform Registry
+
+Terraform sources their providers and modules from the Terraform registry which is located at [registry.terraform.io](https://registry.terraform.io/)
+
+- **Providers** is an interface to APIs that will allow to create resources in Terraform. This will enable cross-platform provisioning.
+- **Modules** are a way to make lagre amount of Terraform code modular, portable and shareable.
+
+[Random Terraform Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string)
+
+#### Terraform Init
+
+At the start of a new Terraform project we will run `terraform init` to download the binaries for the Terrafrom providers that we'll use in this project.
+
+#### Terraform Plan
+
+`terraform plan`
+
+This will generate out a changeset about the state of our infrastructure and what will be changed.
+
+We can output this changeset ie. "plan" to be passed to an aplly, but often you can just ignore outputting.
+
+#### Terraform Apply
+
+`terraform apply`
+
+This will run a plan and pass the changeset to be executed by Terraform. Apply should prompt yes or no.
+
+If we want to automatically approve an apply we can provide the auto approve flag eg. `terraform apply --auto-approve`
+
+### Terraform Lock Files
+
+`.terraform.lock.hcl` contains the locked versioning for the providers and modules that should be used with this project.
+
+The terraform Lock File **should be committed** to your Version Control System (VSC) eg. Github
+
+### Terraform State files
+
+`.terraforn.tfstate` contains information about current state of your infrastructure.
+
+This file **should not be committed** to your VSC.
+
+This file can contain sensitive data.
+
+If you lose this file, you lose knowning the state of your infrastructure.
+
+`.terraform.tfstate.backup` is the previous state file.
+
+### Terraform Directory
+
+`.terraform` directory contains binaries of terraform providers.
+
+https://developer.hashicorp.com/terraform/language/values/outputs
