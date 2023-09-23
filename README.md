@@ -80,14 +80,21 @@ eg. `source ./bin/install_terraform_cli`
 [chmod in wikipedia](https://en.wikipedia.org/wiki/Chmod)
 
 In order to make our bash scripts executable, we need to change linux permission for the fix to be executable at the user mode.
-```
+
+```sh
 chmod u+x ./bin/install_terraform_cli
 ```
 
 Alternatively:
 
-```
+```sh
 chmod 744 ./bin/install_terraform_cli
+```
+
+To see permissions of current files:
+
+```sh
+ls -la
 ```
 
 ### Gitpod Lifecycle (Before, Init, Command)
@@ -269,3 +276,5 @@ Provide your token in the file in following format (replace token in the file):
     }
 }
 ```
+
+We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
