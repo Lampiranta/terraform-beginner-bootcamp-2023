@@ -1,6 +1,5 @@
 # Terraform Beginner Bootcamp 2023 week 0
 
-- [Semantic Versioning](#semantic-versioning)
 - [Install Terraform CLI](#install-terraform-cli)
   * [Considerations for Linux distribution](#considerations-for-linux-distribution)
   * [Refactoring into Bash scripts](#refactoring-into-bash-scripts)
@@ -24,19 +23,6 @@
   * [Terraform State files](#terraform-state-files)
   * [Terraform Directory](#terraform-directory)
 - [Issues with Terraform Cloud Login and Gitpod Workspace](#issues-with-terraform-cloud-login-and-gitpod-workspace)
-
-## Semantic Versioning :mage:
-
-This project is going to utilize semantic versioning for its tagging.
-[semver.org](https://semver.org/)
-
-The general format:
-
- **MAJOR.MINOR.PATCH**, eg. `1.0.1`
-
-- **MAJOR** version when you make incompatible API changes
-- **MINOR** version when you add functionality in a backward compatible manner
-- **PATCH** version when you make backward compatible bug fixes
 
 ## Install Terraform CLI
 
