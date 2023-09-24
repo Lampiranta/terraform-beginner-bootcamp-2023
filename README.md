@@ -1,5 +1,7 @@
 # Terraform Beginner Bootcamp 2023
 
+![268042721-ab015431-2d14-4910-aa37-be4807b2b905](https://github.com/Lampiranta/terraform-beginner-bootcamp-2023/assets/39466981/96349d4b-0fbd-410d-8270-edeb7015dc6b)
+
 ## Semantic Versioning
 
 This project utilizes semantic versioning for its tagging. See [semver.org](https://semver.org/)
