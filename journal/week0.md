@@ -6,7 +6,7 @@
   * [Shebang](#shebang)
     + [Execution considerations](#execution-considerations)
     + [Linux permission considerations](#linux-permission-considerations)
-- [Gitpod Lifecycle Before, Init, Command](#gitpod-lifecycle-before-init-command)
+- [Gitpod Lifecycle](#gitpod-lifecycle)
 - [Working Env Vars](#working-env-vars)
   * [Setting and Unsetting Env Vars](#setting-and-unsetting-env-vars)
   * [Printing Env Vars](#printing-env-vars)
@@ -108,7 +108,7 @@ To see permissions of current files:
 ls -la
 ```
 
-## Gitpod Lifecycle (Before, Init, Command)
+## Gitpod Lifecycle
 
 We need to be careful when using the `Init` because it will not rerun if we restart an existing workspace.
 
