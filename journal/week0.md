@@ -290,3 +290,34 @@ Provide your token in the file in following format (replace token in the file):
 
 We have automated this workaround with the following bash script [bin/generate_tfrc_credentials](bin/generate_tfrc_credentials)
 
+## Git workflow
+
+### Git Tags using Github
+
+Setting new tags without using github can be done in following steps: 
+
+1. Main repository page
+- Select `Create a new release`. 
+
+![1](https://github.com/Lampiranta/terraform-beginner-bootcamp-2023/assets/39466981/0974d85e-0543-4dd3-9ab0-be1e6e61c721)
+
+2. Create a Release page
+   1. Press `Choose a tag`
+   2. Input tag you want to create.
+   3. Press Create new tag: `YOUR_TAG` on publish.
+   4. Press `Publish release`
+      
+Please note that even if you had selected non-main branch in step 1, by default release will be made from main branch.
+
+![2](https://github.com/Lampiranta/terraform-beginner-bootcamp-2023/assets/39466981/d0ff0dc3-578d-4d8d-8aad-40068fac397e)
+
+3. Releases Page
+   - Select bin in the right side and delete just created release.
+
+![3](https://github.com/Lampiranta/terraform-beginner-bootcamp-2023/assets/39466981/43452d60-eb6a-4230-92e3-d4092c5e80b0)
+
+4. Your release is now deleted, but tag still exists
+
+![4](https://github.com/Lampiranta/terraform-beginner-bootcamp-2023/assets/39466981/f409b196-c1f1-4569-bf8b-6f4e98077591)
+
+
