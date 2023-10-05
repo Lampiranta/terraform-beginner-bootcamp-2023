@@ -10,10 +10,18 @@ package main
 // functions and types accessible for use 
 // in the current program or package.
 // fmt is short for format, contains functions for formatted I/O
-import {
+import (
+	"bytes"
+	"context"
+	"encoding/json"
+	"net/http"
+	"log"
 	"fmt"
+	"github.com/google/uuid"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
-}
+)
 
 
 
@@ -24,10 +32,46 @@ func main() {
 	})
 }
 
+// in golang, a titlecase function will get exported
 func Provider() *schema.provider {
 	var p *schema.Provider
 	p = &schema.Provider{
-		ResourceMap:
-		DataSourcesMap:
+		ResourcesMap: map[string]*schema.Resource{
+			"terratowns_home": Resource()
+		},
+		DataSourcesMap: map[string]*schema.Resource{
+
+		},
+		Schema: map[string]*schema.Resource{
+			"endpoint": {
+				Type: schema.TypeString,
+				Required: true,
+				Description: "The endpoint for the external service",
+			},
+			"token": {
+				Type: schema.TypeString,
+				Sensitive: true, // make the token as sensitive to hide it the logs
+				Required: true,
+				Description: "Bearer token for authorization",
+			},
+			"user_uuid: {
+				Type: schema.TypeString,
+				Required: true,
+				Description: "UUID for configuration",
+				//ValidateFunc: validateUUID,
+			}"
+		},
 	}
+	p.ConfigureContextFunc = providerConfigure(p)
+	return p
 }
+
+//func validateUUID(v interface{}, k string) (ws []string, errors []error) {
+//	log.Print("validateUUID:start")
+//	value := v.(string)
+//	if _, err := uuid.Parse(value); err != nil {
+//		errors = append(errors, fmt.Errorf("invalid UUID format"))
+//	}
+//	log.Print("validateUUID:end")
+//	return
+//}
