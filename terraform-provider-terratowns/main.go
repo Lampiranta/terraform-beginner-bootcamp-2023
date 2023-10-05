@@ -11,14 +11,8 @@ package main
 // in the current program or package.
 // fmt is short for format, contains functions for formatted I/O
 import (
-	"bytes"
-	"context"
-	"encoding/json"
-	"net/http"
-	"log"
+	// "log"
 	"fmt"
-	"github.com/google/uuid"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 )
@@ -28,21 +22,24 @@ import (
 // Entry point of application
 func main() {
 	plugin.Serve(&plugin.ServeOpts{
-		ProviderFunc: Provider
+		ProviderFunc: Provider,
 	})
+	// Format.PrintLine
+	// Prints to standard output
+	fmt.Println("Hello, world!")
 }
 
 // in golang, a titlecase function will get exported
-func Provider() *schema.provider {
+func Provider() *schema.Provider {
 	var p *schema.Provider
 	p = &schema.Provider{
 		ResourcesMap: map[string]*schema.Resource{
-			"terratowns_home": Resource()
+
 		},
 		DataSourcesMap: map[string]*schema.Resource{
 
 		},
-		Schema: map[string]*schema.Resource{
+		Schema: map[string]*schema.Schema{
 			"endpoint": {
 				Type: schema.TypeString,
 				Required: true,
@@ -54,15 +51,15 @@ func Provider() *schema.provider {
 				Required: true,
 				Description: "Bearer token for authorization",
 			},
-			"user_uuid: {
+			"user_uuid": {
 				Type: schema.TypeString,
 				Required: true,
 				Description: "UUID for configuration",
 				//ValidateFunc: validateUUID,
-			}"
+			},
 		},
 	}
-	p.ConfigureContextFunc = providerConfigure(p)
+	//p.ConfigureContextFunc = providerConfigure(p)
 	return p
 }
 
