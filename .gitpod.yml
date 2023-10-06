@@ -25,11 +25,13 @@ tasks:
     before: |
       cd $PROJECT_ROOT
       npm install --global http-server
-    command:
+    command: 
       http-server
+
 vscode:
   extensions:
     - amazonwebservices.aws-toolkit-vscode
     - hashicorp.terraform
     - phil294.git-log--graph
     - mhutchie.git-graph
+    - phil294.git-log--graph
