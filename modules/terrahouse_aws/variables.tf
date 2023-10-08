@@ -45,7 +45,6 @@ variable "error_html_filepath" {
 variable "content_version" {
   type        = number
   description = "The content version (positive integer starting at 1)"
-  default     = 1
 
   validation {
     condition     = var.content_version > 0 && floor(var.content_version) == var.content_version

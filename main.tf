@@ -5,7 +5,28 @@ terraform {
       version = "1.0.0"
     }
   }
+  #backend "remote" {
+  #  hostname = "app.terraform.io"
+  #  organization = "ExamPro"
+
+  #  workspaces {
+  #    name = "terra-house-1"
+  #  }
+  #}
+  #cloud {
+  #  organization = "ExamPro"
+  #  workspaces {
+  #    name = "terra-house-1"
+  #  }
+  #}
 }
+
+provider "terratowns" {
+  endpoint = "http://terratowns.cloud/api"
+  user_uuid="857dd0d8-d5ef-42e3-b355-7139ef541bf4" 
+  token="10346f5f-8a12-45e1-aa98-fe0b0fe9649d"
+}
+
 
 #module "terrahouse_aws" {
 #  source = "./modules/terrahouse_aws"
@@ -17,11 +38,7 @@ terraform {
 #  content_version = var.content_version
 #}
   
-provider "terratowns" {
-  endpoint = "http://terratowns.cloud/api"
-  user_uuid="857dd0d8-d5ef-42e3-b355-7139ef541bf4" 
-  token="10346f5f-8a12-45e1-aa98-fe0b0fe9649d"
-}
+
 
 #resource "aws_s3_bucket" "website_bucket" {
 #  # (resource arguments)
