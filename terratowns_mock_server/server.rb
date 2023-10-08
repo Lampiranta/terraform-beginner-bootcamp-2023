@@ -109,8 +109,8 @@ class TerraTownsMockServer < Sinatra::Base
 
   # CREATE
   post '/api/u/:user_uuid/homes' do
-    ensure_correct_headings
-    find_user_by_bearer_token
+    ensure_correct_headings()
+    find_user_by_bearer_token()
     # puts will print to the terminal similar to a print or console.log
     puts "# create - POST /api/homes"
 

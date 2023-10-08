@@ -16,12 +16,6 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
 )
 
-type Config struct {
-	Endpoint string
-	Token string
-	UserUuid string
-}
-
 // func main(): Defines the main function, the entry point of the app. 
 // When you run the program, it starts executing from this function.
 func main() {
