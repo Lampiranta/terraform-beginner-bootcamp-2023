@@ -22,9 +22,9 @@ terraform {
 }
 
 provider "terratowns" {
-  endpoint = "http://terratowns.cloud/api"
-  user_uuid="857dd0d8-d5ef-42e3-b355-7139ef541bf4" 
-  token="10346f5f-8a12-45e1-aa98-fe0b0fe9649d"
+  endpoint = "http://localhost:4567/api"
+  user_uuid="e328f4ab-b99f-421c-84c9-4ccea042c7d1" 
+  token="9b49b3fb-b8e9-483c-b703-97ba88eef8e0"
 }
 
 
