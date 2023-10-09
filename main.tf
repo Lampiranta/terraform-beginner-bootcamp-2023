@@ -49,7 +49,7 @@ It is a cooperative card game in a fantasy world created by Professor J.R.R Tolk
 DESCRIPTION
   #domain_name = module.terrahome_aws.cloudfront_url
   domain_name = module.home_lotr_lcg_hosting.domain_name
-  town = "missingo"
+  town = "gamers-grotto"
   content_version = var.lotr_lcg.content_version
 }
 
@@ -68,6 +68,6 @@ Playing thematic horror tabletop games will benefit from finding great music to 
 One of the best bands there is for this use case is none other than Ambient Jazz band Bohren & der Club of Gore. 
 DESCRIPTION
   domain_name = module.home_lovecraftian_hosting.domain_name
-  town = "missingo"
+  town = "melomaniac-mansion"
   content_version = var.lovecraftian.content_version
 }
